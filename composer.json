@@ -1,5 +1,5 @@
 {
-    "name": "DAVID-HEALTH/aliyun-openapi-php-sdk",
+    "name": "david-health/aliyun-openapi-php-sdk",
     "description": "aliyun-openapi-php-sdk mirror with composer support by DAVID-HEALTH",
     "license": "Apache-2.0",
     "authors": [{
