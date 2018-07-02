@@ -23,7 +23,7 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshots");
+		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshots", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -56,6 +56,8 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	private  $diskId;
 
 	private  $tag3Value;
+
+	private  $dryRun;
 
 	private  $tag5Key;
 
@@ -220,6 +222,15 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setTag3Value($tag3Value) {
 		$this->tag3Value = $tag3Value;
 		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {

@@ -23,7 +23,7 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateSecurityGroup");
+		parent::__construct("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -54,6 +54,8 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 	private  $tag1Key;
 
 	private  $tag1Value;
+
+	private  $resourceGroupId;
 
 	private  $vpcId;
 
@@ -187,6 +189,15 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getVpcId() {

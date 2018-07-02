@@ -23,7 +23,7 @@ class StopInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInstance");
+		parent::__construct("Ecs", "2014-05-26", "StopInstance", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -36,6 +36,8 @@ class StopInstanceRequest extends \RpcAcsRequest
 	private  $confirmStop;
 
 	private  $ownerAccount;
+
+	private  $stoppedMode;
 
 	private  $ownerId;
 
@@ -84,6 +86,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getStoppedMode() {
+		return $this->stoppedMode;
+	}
+
+	public function setStoppedMode($stoppedMode) {
+		$this->stoppedMode = $stoppedMode;
+		$this->queryParameters["StoppedMode"]=$stoppedMode;
 	}
 
 	public function getOwnerId() {

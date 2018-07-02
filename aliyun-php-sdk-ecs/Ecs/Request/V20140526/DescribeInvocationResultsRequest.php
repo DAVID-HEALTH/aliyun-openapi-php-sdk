@@ -23,17 +23,17 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInvocationResults");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $commandId;
+
 	private  $pageNumber;
 
 	private  $pageSize;
-
-	private  $callerUid;
 
 	private  $invokeId;
 
@@ -41,11 +41,11 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $callerBid;
-
 	private  $ownerId;
 
 	private  $instanceId;
+
+	private  $invokeRecordStatus;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -54,6 +54,15 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getCommandId() {
+		return $this->commandId;
+	}
+
+	public function setCommandId($commandId) {
+		$this->commandId = $commandId;
+		$this->queryParameters["CommandId"]=$commandId;
 	}
 
 	public function getPageNumber() {
@@ -72,15 +81,6 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
 	}
 
 	public function getInvokeId() {
@@ -110,15 +110,6 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -135,6 +126,15 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getInvokeRecordStatus() {
+		return $this->invokeRecordStatus;
+	}
+
+	public function setInvokeRecordStatus($invokeRecordStatus) {
+		$this->invokeRecordStatus = $invokeRecordStatus;
+		$this->queryParameters["InvokeRecordStatus"]=$invokeRecordStatus;
 	}
 	
 }

@@ -23,26 +23,38 @@ class DescribeDBInstanceIPArrayListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
+	private  $whitelistNetworkType;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getWhitelistNetworkType() {
+		return $this->whitelistNetworkType;
+	}
+
+	public function setWhitelistNetworkType($whitelistNetworkType) {
+		$this->whitelistNetworkType = $whitelistNetworkType;
+		$this->queryParameters["WhitelistNetworkType"]=$whitelistNetworkType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -54,13 +66,13 @@ class DescribeDBInstanceIPArrayListRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {
@@ -72,13 +84,13 @@ class DescribeDBInstanceIPArrayListRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

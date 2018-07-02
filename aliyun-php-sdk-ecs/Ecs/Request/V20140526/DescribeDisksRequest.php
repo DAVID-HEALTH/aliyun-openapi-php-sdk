@@ -23,7 +23,7 @@ class DescribeDisksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDisks");
+		parent::__construct("Ecs", "2014-05-26", "DescribeDisks", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -67,6 +67,8 @@ class DescribeDisksRequest extends \RpcAcsRequest
 
 	private  $enableAutoSnapshot;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
@@ -88,6 +90,8 @@ class DescribeDisksRequest extends \RpcAcsRequest
 	private  $tag5Value;
 
 	private  $tag1Key;
+
+	private  $AdditionalAttributess;
 
 	private  $enableShared;
 
@@ -285,6 +289,15 @@ class DescribeDisksRequest extends \RpcAcsRequest
 		$this->queryParameters["EnableAutoSnapshot"]=$enableAutoSnapshot;
 	}
 
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
+	}
+
 	public function getTag5Key() {
 		return $this->tag5Key;
 	}
@@ -382,6 +395,17 @@ class DescribeDisksRequest extends \RpcAcsRequest
 	public function setTag1Key($tag1Key) {
 		$this->tag1Key = $tag1Key;
 		$this->queryParameters["Tag.1.Key"]=$tag1Key;
+	}
+
+	public function getAdditionalAttributess() {
+		return $this->AdditionalAttributess;
+	}
+
+	public function setAdditionalAttributess($AdditionalAttributess) {
+		$this->AdditionalAttributess = $AdditionalAttributess;
+		for ($i = 0; $i < count($AdditionalAttributess); $i ++) {	
+			$this->queryParameters["AdditionalAttributes.".($i+1)] = $AdditionalAttributess[$i];
+		}
 	}
 
 	public function getEnableShared() {

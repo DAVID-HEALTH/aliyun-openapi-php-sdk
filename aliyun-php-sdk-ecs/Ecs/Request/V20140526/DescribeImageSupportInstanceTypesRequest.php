@@ -23,9 +23,13 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes");
+		parent::__construct("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $actionType;
+
+	private  $Filters;
 
 	private  $resourceOwnerId;
 
@@ -34,6 +38,28 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 	private  $resourceOwnerAccount;
 
 	private  $ownerId;
+
+	public function getActionType() {
+		return $this->actionType;
+	}
+
+	public function setActionType($actionType) {
+		$this->actionType = $actionType;
+		$this->queryParameters["ActionType"]=$actionType;
+	}
+
+	public function getFilters() {
+		return $this->Filters;
+	}
+
+	public function setFilters($Filters) {
+		$this->Filters = $Filters;
+		for ($i = 0; $i < count($Filters); $i ++) {	
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
+			$this->queryParameters['Filter.' . ($i + 1) . '.Value'] = $Filters[$i]['Value'];
+
+		}
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;

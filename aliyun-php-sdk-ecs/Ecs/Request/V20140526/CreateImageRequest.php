@@ -23,7 +23,7 @@ class CreateImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateImage");
+		parent::__construct("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -46,6 +46,8 @@ class CreateImageRequest extends \RpcAcsRequest
 	private  $platform;
 
 	private  $tag1Value;
+
+	private  $resourceGroupId;
 
 	private  $imageName;
 
@@ -167,6 +169,15 @@ class CreateImageRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getImageName() {

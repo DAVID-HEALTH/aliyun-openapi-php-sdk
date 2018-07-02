@@ -23,7 +23,7 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteInstance");
+		parent::__construct("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -34,6 +34,8 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $terminateSubscription;
 
 	private  $force;
 
@@ -73,6 +75,15 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getTerminateSubscription() {
+		return $this->terminateSubscription;
+	}
+
+	public function setTerminateSubscription($terminateSubscription) {
+		$this->terminateSubscription = $terminateSubscription;
+		$this->queryParameters["TerminateSubscription"]=$terminateSubscription;
 	}
 
 	public function getForce() {

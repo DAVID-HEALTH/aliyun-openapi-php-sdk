@@ -23,11 +23,13 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyDiskChargeType");
+		parent::__construct("Ecs", "2014-05-26", "ModifyDiskChargeType", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
+
+	private  $diskChargeType;
 
 	private  $instanceId;
 
@@ -50,6 +52,15 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getDiskChargeType() {
+		return $this->diskChargeType;
+	}
+
+	public function setDiskChargeType($diskChargeType) {
+		$this->diskChargeType = $diskChargeType;
+		$this->queryParameters["DiskChargeType"]=$diskChargeType;
 	}
 
 	public function getInstanceId() {

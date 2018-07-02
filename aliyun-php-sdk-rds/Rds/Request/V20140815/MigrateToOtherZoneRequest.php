@@ -23,37 +23,33 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "MigrateToOtherZone");
+		parent::__construct("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $vSwitchId;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
+	private  $resourceOwnerAccount;
 
-	private  $zoneId;
+	private  $effectiveTime;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $zoneId;
+
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getVSwitchId() {
+		return $this->vSwitchId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
 	public function getResourceOwnerId() {
@@ -65,13 +61,31 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getZoneId() {
@@ -83,13 +97,22 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

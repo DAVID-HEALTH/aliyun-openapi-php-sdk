@@ -23,43 +23,41 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifySecurityIps");
+		parent::__construct("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $clientToken;
-
-	private  $dBInstanceId;
-
-	private  $securityIps;
 
 	private  $dBInstanceIPArrayName;
 
-	private  $dBInstanceIPArrayAttribute;
+	private  $resourceOwnerId;
+
+	private  $modifyMode;
+
+	private  $resourceOwnerAccount;
+
+	private  $clientToken;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $securityIps;
+
+	private  $securityGroupId;
+
+	private  $ownerId;
+
+	private  $whitelistNetworkType;
+
+	private  $dBInstanceIPArrayAttribute;
+
+	private  $dBInstanceId;
+
+	public function getDBInstanceIPArrayName() {
+		return $this->dBInstanceIPArrayName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setDBInstanceIPArrayName($dBInstanceIPArrayName) {
+		$this->dBInstanceIPArrayName = $dBInstanceIPArrayName;
+		$this->queryParameters["DBInstanceIPArrayName"]=$dBInstanceIPArrayName;
 	}
 
 	public function getResourceOwnerId() {
@@ -71,6 +69,24 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getModifyMode() {
+		return $this->modifyMode;
+	}
+
+	public function setModifyMode($modifyMode) {
+		$this->modifyMode = $modifyMode;
+		$this->queryParameters["ModifyMode"]=$modifyMode;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -80,13 +96,13 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSecurityIps() {
@@ -98,13 +114,31 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityIps"]=$securityIps;
 	}
 
-	public function getDBInstanceIPArrayName() {
-		return $this->dBInstanceIPArrayName;
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
 	}
 
-	public function setDBInstanceIPArrayName($dBInstanceIPArrayName) {
-		$this->dBInstanceIPArrayName = $dBInstanceIPArrayName;
-		$this->queryParameters["DBInstanceIPArrayName"]=$dBInstanceIPArrayName;
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getWhitelistNetworkType() {
+		return $this->whitelistNetworkType;
+	}
+
+	public function setWhitelistNetworkType($whitelistNetworkType) {
+		$this->whitelistNetworkType = $whitelistNetworkType;
+		$this->queryParameters["WhitelistNetworkType"]=$whitelistNetworkType;
 	}
 
 	public function getDBInstanceIPArrayAttribute() {
@@ -116,13 +150,13 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceIPArrayAttribute"]=$dBInstanceIPArrayAttribute;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

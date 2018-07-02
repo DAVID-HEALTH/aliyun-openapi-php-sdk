@@ -23,7 +23,7 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeRegions");
+		parent::__construct("Ecs", "2014-05-26", "DescribeRegions", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,7 +33,13 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $acceptLanguage;
+
 	private  $ownerId;
+
+	private  $instanceChargeType;
+
+	private  $resourceType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,6 +68,15 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getAcceptLanguage() {
+		return $this->acceptLanguage;
+	}
+
+	public function setAcceptLanguage($acceptLanguage) {
+		$this->acceptLanguage = $acceptLanguage;
+		$this->queryParameters["AcceptLanguage"]=$acceptLanguage;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -69,6 +84,24 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 	
 }

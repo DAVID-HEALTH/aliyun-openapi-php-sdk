@@ -30,6 +30,8 @@ class ListFacesRequest extends \RpcAcsRequest
 
 	private  $cursor;
 
+	private  $hasFaceName;
+
 	private  $size;
 
 	private  $libraryId;
@@ -47,6 +49,15 @@ class ListFacesRequest extends \RpcAcsRequest
 	public function setCursor($cursor) {
 		$this->cursor = $cursor;
 		$this->queryParameters["Cursor"]=$cursor;
+	}
+
+	public function getHasFaceName() {
+		return $this->hasFaceName;
+	}
+
+	public function setHasFaceName($hasFaceName) {
+		$this->hasFaceName = $hasFaceName;
+		$this->queryParameters["HasFaceName"]=$hasFaceName;
 	}
 
 	public function getSize() {

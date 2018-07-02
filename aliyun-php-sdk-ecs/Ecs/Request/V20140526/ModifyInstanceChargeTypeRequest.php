@@ -23,7 +23,7 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceChargeType");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -48,6 +48,8 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
 	private  $periodUnit;
 
 	private  $instanceIds;
+
+	private  $instanceChargeType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -146,6 +148,15 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
 	public function setInstanceIds($instanceIds) {
 		$this->instanceIds = $instanceIds;
 		$this->queryParameters["InstanceIds"]=$instanceIds;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
 	}
 	
 }

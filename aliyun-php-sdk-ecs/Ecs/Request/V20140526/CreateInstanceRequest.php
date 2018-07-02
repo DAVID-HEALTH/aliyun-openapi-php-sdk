@@ -23,7 +23,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateInstance");
+		parent::__construct("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -32,6 +32,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $tag2Key;
+
+	private  $hpcClusterId;
 
 	private  $tag3Key;
 
@@ -55,6 +57,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $period;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $ownerId;
@@ -64,6 +68,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $privateIpAddress;
 
 	private  $spotStrategy;
+
+	private  $periodUnit;
 
 	private  $instanceName;
 
@@ -85,6 +91,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $vlanId;
 
+	private  $spotInterruptionBehavior;
+
 	private  $ioOptimized;
 
 	private  $securityGroupId;
@@ -96,6 +104,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $systemDiskCategory;
 
 	private  $userData;
+
+	private  $passwordInherit;
 
 	private  $instanceType;
 
@@ -114,6 +124,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $systemDiskDiskName;
 
 	private  $ramRoleName;
+
+	private  $dedicatedHostId;
 
 	private  $clusterId;
 
@@ -154,6 +166,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setTag2Key($tag2Key) {
 		$this->tag2Key = $tag2Key;
 		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	}
+
+	public function getHpcClusterId() {
+		return $this->hpcClusterId;
+	}
+
+	public function setHpcClusterId($hpcClusterId) {
+		$this->hpcClusterId = $hpcClusterId;
+		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
 	}
 
 	public function getTag3Key() {
@@ -255,6 +276,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["Period"]=$period;
 	}
 
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
+	}
+
 	public function getTag5Key() {
 		return $this->tag5Key;
 	}
@@ -298,6 +328,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setSpotStrategy($spotStrategy) {
 		$this->spotStrategy = $spotStrategy;
 		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+
+	public function getPeriodUnit() {
+		return $this->periodUnit;
+	}
+
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
 	}
 
 	public function getInstanceName() {
@@ -390,6 +429,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["VlanId"]=$vlanId;
 	}
 
+	public function getSpotInterruptionBehavior() {
+		return $this->spotInterruptionBehavior;
+	}
+
+	public function setSpotInterruptionBehavior($spotInterruptionBehavior) {
+		$this->spotInterruptionBehavior = $spotInterruptionBehavior;
+		$this->queryParameters["SpotInterruptionBehavior"]=$spotInterruptionBehavior;
+	}
+
 	public function getIoOptimized() {
 		return $this->ioOptimized;
 	}
@@ -442,6 +490,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setUserData($userData) {
 		$this->userData = $userData;
 		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getInstanceType() {
@@ -523,6 +580,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setRamRoleName($ramRoleName) {
 		$this->ramRoleName = $ramRoleName;
 		$this->queryParameters["RamRoleName"]=$ramRoleName;
+	}
+
+	public function getDedicatedHostId() {
+		return $this->dedicatedHostId;
+	}
+
+	public function setDedicatedHostId($dedicatedHostId) {
+		$this->dedicatedHostId = $dedicatedHostId;
+		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
 	}
 
 	public function getClusterId() {
